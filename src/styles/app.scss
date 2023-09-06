@@ -10,5 +10,16 @@ h3 {
     color: rgb(68, 67, 67);
 }
 
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h3,
+h4 {
+    font-weight: 400;
+    color: rgb(109, 108, 108);
+}
+
 @import "./song.scss";
 @import "./player.scss";
+@import "./library.scss";
