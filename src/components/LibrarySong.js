@@ -1,8 +1,9 @@
 import React from "react";
 
+
 function LibrarySong({ song, songs, setCurrentSong, id, audioRef, isPlaying, setSongs }) {
-    const selectSongHandler = () => {
-        setCurrentSong(song);
+    const selectSongHandler = async () => {
+        await setCurrentSong(song);
         //Checnk acitve songs
         const newSongs = songs.map((song) => {
             if (song.id === id) {
@@ -18,15 +19,7 @@ function LibrarySong({ song, songs, setCurrentSong, id, audioRef, isPlaying, set
             }
         });
         setSongs(newSongs);
-
-        if (isPlaying) {
-            const playPromise = audioRef.current.play();
-            if (isPlaying !== undefined) {
-                playPromise.then((audio) => {
-                    audioRef.current.play()
-                });
-            }
-        }
+        if (isPlaying) audioRef.current.play();
     };
 
     return (
